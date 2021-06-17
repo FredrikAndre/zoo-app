@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Sigmar+One&display=swap');
+
+.container {
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    background-color: #A5C5C3;
+}
+
+.zooname {
+    font-family: 'Sigmar One', cursive;
+    color: #EC380B;
+    background-color: #F8F8FF;
+    padding: 1rem;
+    border: 2px solid #EC380B;
+}
+
+.animallist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100rem;
+    list-style-type: none;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px dotted #429F9E;
+    background-color: #F8F8FF;
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 300px;
+    height: 420px;
+    transition: transform 0.2s ease;
+}
+
+.list:hover {
+    transform: scale(1.05);
+}
+
+.animaltitle {
+    font-family: 'Sigmar One', cursive;
+    background-color: #007872;
+    color: #fff;
+    text-align: center;
+}
+
+.animalimg {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    max-height: 8rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.warning {
+    text-align: center;
+    border: 2px solid #EC380B;
+    background-color: #F05F3B;
+    color: #fff;
+    padding: 0.2rem;
+}
+
+.linktodetail {
+    text-decoration: none;
+    color: #007872;
+}
+
+.linktodetail:hover {
+    opacity: 0.7;
+}
+

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimalsArray } from '../models/AnimalsArray';
+import { Animal } from "../models/Animal";
+import "./Animalstyle.css";
 
 const Animals = () => {
-    const [animals, setAnimals] = useState<AnimalsArray[]>([]);
-    
+    const [animals, setAnimals] = useState<Animal[]>([])
+
     const getAnimalsfromStorage = () => {
         const animalLS = JSON.parse(localStorage.getItem('info') || '{}');
         setAnimals(animalLS)
@@ -20,20 +21,29 @@ const Animals = () => {
             })    
         } else {
             getAnimalsfromStorage()
-            console.log('hämtar från API')
+            console.log('hämtar från LS')
         }      
     }, [])
 
     let liTags = animals.map((animal) => {
-        return (<li key={animal.id}>
-            <h3>{animal.name}</h3>
-            <img src={animal.imageUrl} alt=""/>
-            <p>{animal.shortDescription}</p>
-            <Link to={"/animal/" + animal.id}>Mer info</Link>
+        let timeToFeed = new Date().getTime() - new Date(animal.lastFed).getTime()
+        let differenceHours = Math.floor(timeToFeed / (1000*60*60))
+        let veryHungry = differenceHours >= 4
+        return (<li className="list" key={animal.id}>
+            <div>
+            <h3 className="animaltitle">{animal.name}</h3>
+            <div className="animalimg"><img src={animal.imageUrl} alt=""/></div>
+            </div>
+            <p className="description">{animal.shortDescription}</p>
+            { veryHungry ? <p className="warning">Jag vill gärna bli matad nu!</p> : null}
+            <Link to={"/animal/" + animal.id} className="linktodetail">Läs Mer om {animal.name} &rarr;</Link>
         </li>)
     })
 
-    return (<ul> {liTags}</ul>)
+    return (<div className="container">
+        <h1 className="zooname">Lilla Zoo</h1>
+        <ul className="animallist"> {liTags} </ul>
+        </div>)
 }
 
 export default Animals

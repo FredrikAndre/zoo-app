@@ -1,0 +1,151 @@
+.animalcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A5C5C3;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+}
+
+.animal {
+    width: 100%;
+    max-width: 40rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    border: 3px dotted #429F9E;
+    background-color: #F8F8FF;
+}
+
+.animalname {
+    font-family: 'Sigmar One', cursive;
+    color: #007872;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.namecolor {
+    color: #EC380B
+}
+
+.imgcontainer {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    max-height: 12rem;
+}
+
+.soloimg {
+    width: 100%;
+    height: auto;
+}
+
+.birthyear {
+    font-size: 0.9rem;
+}
+
+.longdescr {
+    font-size: 0.8rem;
+}
+
+.medicine {
+    font-size: 0.8rem;
+}
+
+.feedingtime {
+    font-size: 0.8rem;
+}
+
+.fedanimal {
+    display: flex;
+    align-items: center;
+}
+
+.hungry {
+    font-size: 0.9rem;
+    margin-right: 1rem;
+}
+
+.nothungry {
+    font-size: 0.9rem;
+    margin-right: 1rem;
+}
+
+.feedbtn {
+    cursor: pointer;
+    width: 4rem;
+    height: 2rem;
+    border: none;
+    background-color: #EC380B;
+    color: #fff;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+.feedbtn:focus {
+    outline: none;
+}
+.feedbtn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #007872;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 200ms ease-in;
+}
+.feedbtn:hover::after {
+    transform: scale(1);
+}
+
+.feedbtn:disabled {
+    cursor: auto;
+    opacity: 0.5;
+}
+
+.feedbtn:disabled::after {
+    transition: none;
+    transform: none;
+}
+
+.lastfed {
+    font-size: 0.9rem;
+}
+
+.linktolist {
+    text-decoration: none;
+    color: #007872;
+    font-size: 0.8rem;
+}
+
+.linktolist:hover {
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 576px) {
+    .animal {
+        padding: 2rem;
+    }
+    .animalname {
+        font-size: 1.5rem;
+    }
+    .imgcontainer {
+        max-height: 16rem;
+    }
+    .longdescr {
+        font-size: 0.9rem;
+    }
+    .medicine {
+        font-size: 0.9rem;
+    }
+    .feedingtime {
+        font-size: 0.9rem;
+    }
+    .feedbtn {
+        width: 6rem;
+        height: 3rem;
+    }
+}
