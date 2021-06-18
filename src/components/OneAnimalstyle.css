@@ -4,7 +4,6 @@
     align-items: center;
     background-color: #A5C5C3;
     font-family: 'Raleway', sans-serif;
-    height: 100vh;
 }
 
 .animal {
@@ -62,13 +61,15 @@
 }
 
 .hungry {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-right: 1rem;
+    color: #EC380B;
 }
 
 .nothungry {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-right: 1rem;
+    color: #007872;
 }
 
 .feedbtn {
@@ -112,7 +113,7 @@
 }
 
 .lastfed {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .linktolist {
@@ -142,6 +143,15 @@
         font-size: 0.9rem;
     }
     .feedingtime {
+        font-size: 0.9rem;
+    }
+    .hungry {
+        font-size: 0.9rem;
+    }
+    .nothungry {
+        font-size: 0.9rem;
+    }
+    .lastfed {
         font-size: 0.9rem;
     }
     .feedbtn {
