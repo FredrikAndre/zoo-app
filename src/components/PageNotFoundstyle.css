@@ -1,0 +1,60 @@
+.errorcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #A5C5C3;
+}
+
+.textcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8FF;
+    width: 22rem;
+    height: 15rem;
+    border: 2px solid #EC380B;
+}
+
+.errortext {
+    font-family: 'Sigmar One', cursive;
+    font-size: 1.5rem;
+    color: #EC380B;
+}
+
+.linktostart {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: #007872;
+    position: relative;
+}
+
+.linktostart::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #007872;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 150ms ease-in;
+}
+
+.linktostart:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+@media screen and (min-width: 576px) {
+    .textcontainer {
+        width: 30rem;
+        height: 23rem;
+    }
+    .errortext {
+        font-size: 2rem;
+    }
+}

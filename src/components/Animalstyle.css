@@ -77,9 +77,26 @@ img {
 .linktodetail {
     text-decoration: none;
     color: #007872;
+    position: relative;
 }
 
-.linktodetail:hover {
-    opacity: 0.7;
+.linktodetail::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 55%;
+    height: 1px;
+    background-color: #007872;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in;
 }
+
+.linktodetail:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 

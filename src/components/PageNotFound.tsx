@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+import "./PageNotFoundstyle.css";
 
 const PageNotFound = () => {
     return (
-        <div>
-            <h2>Woops, page not found! Something's amiss.</h2>
+        <div className="errorcontainer">
+            <div className="textcontainer">
+                <h1 className="errortext">Oj då! Något gick fel.</h1>
+                <Link to="/" className="linktostart">Klicka här för att gå till startsidan.</Link>
+            </div>
         </div>
     )
 }
